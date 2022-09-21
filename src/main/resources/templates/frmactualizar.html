@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+
+    <title>Document</title>
+</head>
+<body>
+  <fieldset class="fi">
+  <legend>ASctualizar cliente</legend>
+  
+   <form th:action="@{/cliente/actualizar}" th:object="${clienteactualizar}"method="POST" class="frm">
+
+    <label for="z">Documento
+     <input type="text" id="z" required th:field="*{documento}">
+    </label>
+
+    <label for="n">Nombre
+      <input type="text" id="n" th:field="*{nombre}">
+    </label>
+
+    <label for="a">Apellido
+     <input type="text" id="a" th:field="*{apellido}">
+   </label>
+
+    <label for="e">Correo
+     <input type="email" id="e" th:field="*{correo}">
+   </label>
+
+    <label for="c">Celular
+     <input type="text" id="c" th:field="*{celular}">
+    </label>
+
+    
+
+
+    <input class="boton" type="submit" value="Actualizar">
+   <!-- <button>Registrar</button>-->
+
+
+   </form>
+
+
+
+   </fieldset>
+</body>
+</html>

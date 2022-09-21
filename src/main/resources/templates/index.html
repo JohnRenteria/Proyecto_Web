@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es"   xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/styless.css}">
+    <title>mipagina</title>
+</head>
+
+
+
+<body>
+
+
+    <header class="contheader" id="contenca">
+       <div class="titulologo">
+        <h1 class="titulop">Cooperativa de ahorro y credito</h1>
+        <div class="logo"></div>
+      </div>
+        <nav class="menu">
+            <ul>
+                <li class="lista"><a th:href="@{cliente}">Consulta clientes</a> </li>
+                <li class="lista"><a th:href="@{/cliente/nuevo}">Registro de clientes</a> </li>
+                <li class="lista"><a href="#">link3</a> </li>
+                <li class="lista"><a href="#">Link4</a> </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <div sec:authorize="!isAuthenticated()">
+        <a th:href="@{/oauth2/authorization/auth0}">LoguIn</a>
+    </div>
+
+    <div sec:authorize="isAuthenticated()">
+        <div th:if="${usuario.getEmail()}=='jadherrenteria96@gmail.com'"></div>
+        <a th:href="@{/cliente/nuevo}">Ir a la aplicación</a>
+    </div>
+
+
+    <main class="main">
+        <section class="secuno">
+         <article class="art1" id="artt1">
+            <h2>Subtitulo1</h2>
+            <img src="" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nobis architecto neque, libero
+                molestias at
+                possimus ea totam tenetur vitae nulla debitis blanditiis? Vero deleniti debitis optio ducimus!
+                Aspernatur, sint!
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quas illum officia, cupiditate
+                quibusdam
+                quaerat! Consequatur ex, ea est nulla cum laboriosam culpa praesentium numquam. Temporibus aliquam
+                consequuntur
+                sint iusto.</p>
+           </article>
+         <article class="art1" id="artt2">
+            <h2>Subtitulo2</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa id libero corrupti illum maxime sunt
+                    ad architecto illo iste. Veritatis temporibus sunt consequuntur sequi ratione. At inventore ullam
+                    cumque tempora?</p>
+           </article>
+
+
+           <article class="art1" id="artt3">
+            <h2>Subtitulo3</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa id libero corrupti illum maxime sunt
+                    ad architecto illo iste. Veritatis temporibus sunt consequuntur sequi ratione. At inventore ullam
+                    cumque tempora?</p>
+           </article>
+        </section>
+    </main>
+</body>
+
+</html>
