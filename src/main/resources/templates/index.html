@@ -36,7 +36,6 @@
     </div>
 
     <div sec:authorize="isAuthenticated()">
-        <div th:if="${usuario.getEmail()}=='jadherrenteria96@gmail.com' "></div>
         <a th:href="@{/cliente/nuevo}">Ir a la aplicación</a>
     </div>
 
